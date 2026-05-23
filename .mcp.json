@@ -5,7 +5,7 @@
       "args": ["C:/Users/Apud_/Documents/stannum-max-agent/mcp/server.js"],
       "env": {
         "GITHUB_TOKEN": "REEMPLAZAR_CON_TU_PAT",
-        "GITHUB_OWNER": "REEMPLAZAR_CON_TU_USUARIO",
+        "GITHUB_OWNER": "BRAHIN-Stannum",
         "GITHUB_REPO": "stannum-max-agent",
         "GITHUB_BRANCH": "master"
       }
