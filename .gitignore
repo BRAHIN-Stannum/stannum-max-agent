@@ -1,0 +1,18 @@
+# Dependencies
+mcp/node_modules/
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# MCP config local (contiene token real — NO commitear con valores reales)
+# .mcp.json → usa .mcp.json como template con placeholders solamente
+
+# OS
+.DS_Store
+Thumbs.db
