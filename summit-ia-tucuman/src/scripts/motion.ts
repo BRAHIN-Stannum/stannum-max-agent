@@ -1,6 +1,7 @@
-import { animate, stagger } from 'motion';
+import { animate, stagger, inView } from 'motion';
 
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const EASE_BRIEF: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 function easeOutQuart(t: number) {
   return 1 - Math.pow(1 - t, 4);
@@ -26,107 +27,120 @@ function startCounter(el: HTMLElement) {
   requestAnimationFrame(frame);
 }
 
-function revealOnce(target: Element) {
-  if (REDUCED) {
-    (target as HTMLElement).style.opacity = '1';
-    (target as HTMLElement).style.transform = 'none';
-    target.querySelectorAll<HTMLElement>('.anim-in').forEach((c) => {
-      c.style.opacity = '1';
-      c.style.transform = 'none';
-    });
-    target.querySelectorAll<HTMLElement>('[data-counter]').forEach(startCounter);
-    return;
-  }
-  const children = target.querySelectorAll<HTMLElement>('.anim-in');
-  if (children.length === 0) {
-    animate(
-      target as HTMLElement,
-      { opacity: [0, 1], transform: ['translateY(24px)', 'translateY(0px)'] },
-      { duration: 0.6, easing: 'ease' }
-    );
-  } else {
-    animate(
-      Array.from(children),
-      { opacity: [0, 1], transform: ['translateY(24px)', 'translateY(0px)'] },
-      { duration: 0.6, easing: 'ease', delay: stagger(0.1) }
-    );
-  }
-  target.querySelectorAll<HTMLElement>('[data-counter]').forEach(startCounter);
-}
-
 function heroEntrance() {
   const hero = document.querySelector('[data-hero]');
   if (!hero) return;
+
+  const eyebrow = hero.querySelector<HTMLElement>('[data-hero-eyebrow]');
+  const w0 = hero.querySelector<HTMLElement>('[data-hero-word="0"]');
+  const w1 = hero.querySelector<HTMLElement>('[data-hero-word="1"]');
+  const w2 = hero.querySelector<HTMLElement>('[data-hero-word="2"]');
+  const sub = hero.querySelector<HTMLElement>('[data-hero-sub]');
+  const cta = hero.querySelector<HTMLElement>('[data-hero-cta]');
+
   if (REDUCED) {
-    hero.querySelectorAll<HTMLElement>('.anim-in').forEach((c) => {
-      c.style.opacity = '1';
-      c.style.transform = 'none';
+    [eyebrow, w0, w1, w2, sub, cta].forEach((el) => {
+      if (!el) return;
+      el.style.opacity = '1';
+      el.style.transform = 'none';
     });
     return;
   }
-  const eyebrow = hero.querySelector<HTMLElement>('[data-hero-eyebrow]');
-  const words = hero.querySelectorAll<HTMLElement>('[data-hero-word]');
-  const sub = hero.querySelector<HTMLElement>('[data-hero-sub]');
-  const cta = hero.querySelector<HTMLElement>('[data-hero-cta]');
 
   if (eyebrow) {
     animate(
       eyebrow,
-      { opacity: [0, 1], transform: ['translateY(12px)', 'translateY(0)'] },
-      { duration: 0.4, easing: 'ease' }
+      { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'] },
+      { duration: 0.6, easing: EASE_BRIEF }
     );
   }
-  if (words.length) {
+  if (w0) {
     animate(
-      Array.from(words),
-      { opacity: [0, 1], transform: ['translateY(24px)', 'translateY(0)'] },
-      { duration: 0.6, easing: 'ease', delay: stagger(0.15, { start: 0.3 }) }
+      w0,
+      { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'] },
+      { duration: 0.8, delay: 0.2, easing: EASE_BRIEF }
+    );
+  }
+  if (w1) {
+    animate(
+      w1,
+      { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0)'] },
+      { duration: 0.8, delay: 0.35, easing: EASE_BRIEF }
+    );
+  }
+  if (w2) {
+    animate(
+      w2,
+      { opacity: [0, 1], transform: ['translateX(-20px)', 'translateX(0)'] },
+      { duration: 0.8, delay: 0.5, easing: EASE_BRIEF }
     );
   }
   if (sub) {
     animate(
       sub,
-      { opacity: [0, 1], transform: ['translateY(16px)', 'translateY(0)'] },
-      { duration: 0.5, easing: 'ease', delay: 0.3 + words.length * 0.15 + 0.1 }
+      { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'] },
+      { duration: 0.6, delay: 0.7, easing: EASE_BRIEF }
     );
   }
   if (cta) {
     animate(
       cta,
-      { opacity: [0, 1], transform: ['translateY(12px)', 'translateY(0)'] },
-      { duration: 0.4, easing: 'ease', delay: 0.3 + words.length * 0.15 + 0.4 }
+      { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'] },
+      { duration: 0.6, delay: 0.8, easing: EASE_BRIEF }
     );
   }
+}
+
+function revealSection(el: Element) {
+  if (REDUCED) {
+    el.classList.add('is-visible');
+    el.querySelectorAll<HTMLElement>('.anim-in').forEach((c) => {
+      c.style.opacity = '1';
+      c.style.transform = 'none';
+    });
+    el.querySelectorAll<HTMLElement>('[data-counter]').forEach(startCounter);
+    return;
+  }
+
+  el.classList.add('is-visible');
+
+  const children = el.querySelectorAll<HTMLElement>('.anim-in');
+  if (children.length) {
+    animate(
+      Array.from(children),
+      { opacity: [0, 1], transform: ['translateY(24px)', 'translateY(0)'] },
+      { duration: 0.7, easing: EASE_BRIEF, delay: stagger(0.08) }
+    );
+  }
+  el.querySelectorAll<HTMLElement>('[data-counter]').forEach(startCounter);
 }
 
 function init() {
   heroEntrance();
 
-  const targets = document.querySelectorAll<HTMLElement>('[data-reveal]');
+  const sections = document.querySelectorAll<HTMLElement>('.reveal-section, [data-reveal]');
+
   if (REDUCED) {
-    targets.forEach((t) => {
-      t.querySelectorAll<HTMLElement>('.anim-in').forEach((c) => {
+    sections.forEach((s) => {
+      s.classList.add('is-visible');
+      s.querySelectorAll<HTMLElement>('.anim-in').forEach((c) => {
         c.style.opacity = '1';
         c.style.transform = 'none';
       });
-      t.querySelectorAll<HTMLElement>('[data-counter]').forEach(startCounter);
+      s.querySelectorAll<HTMLElement>('[data-counter]').forEach(startCounter);
     });
     return;
   }
 
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          revealOnce(entry.target);
-          io.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
-  );
-
-  targets.forEach((t) => io.observe(t));
+  sections.forEach((section) => {
+    inView(
+      section,
+      () => {
+        revealSection(section);
+      },
+      { amount: 0.1 }
+    );
+  });
 }
 
 if (document.readyState === 'loading') {

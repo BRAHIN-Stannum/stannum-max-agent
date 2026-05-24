@@ -1,0 +1,23 @@
+---
+const items = [
+  'INTELIGENCIA ARTIFICIAL',
+  'TUCUMÁN',
+  '17 JUNIO 2026',
+  'HOTEL HILTON',
+  'SOLO 100 CUPOS',
+];
+
+const full = [...items, ...items, ...items, ...items];
+---
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    {
+      full.map((t) => (
+        <span class="marquee-text">
+          {t} <span class="text-accent">·</span>
+        </span>
+      ))
+    }
+  </div>
+</div>

@@ -7,7 +7,7 @@ const blocks = [
 ];
 ---
 
-<section class="section section-alt border-t border-default" data-reveal>
+<section class="section section-alt reveal-section">
   <div class="container">
     <p class="eyebrow anim-in">EL EVENTO</p>
     <h2 class="headline-lg mt-6 anim-in">17 DE <span class="accent">JUNIO</span></h2>
@@ -19,9 +19,9 @@ const blocks = [
     <div class="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
       {
         blocks.map((b) => (
-          <div class="card anim-in flex flex-col items-center gap-3 py-10">
-            <span id={b.id} class="stat-number !text-[clamp(2.5rem,6vw,4.5rem)] tabular-nums">00</span>
-            <span class="eyebrow" style="color: var(--color-text-secondary);">{b.label}</span>
+          <div class="countdown-box anim-in">
+            <span id={b.id} class="countdown-num tabular-nums">00</span>
+            <span class="countdown-label">{b.label}</span>
           </div>
         ))
       }
