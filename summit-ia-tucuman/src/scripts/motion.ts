@@ -14,7 +14,7 @@ function startCounter(el: HTMLElement) {
     el.textContent = `${prefix}${target.toLocaleString('es-AR')}${suffix}`;
     return;
   }
-  const duration = 1600;
+  const duration = 1400;
   const start = performance.now();
   function frame(now: number) {
     const t = Math.min(1, (now - start) / duration);
@@ -41,20 +41,67 @@ function revealOnce(target: Element) {
   if (children.length === 0) {
     animate(
       target as HTMLElement,
-      { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0px)'] },
-      { duration: 0.7, easing: [0.16, 1, 0.3, 1] }
+      { opacity: [0, 1], transform: ['translateY(24px)', 'translateY(0px)'] },
+      { duration: 0.6, easing: 'ease' }
     );
   } else {
     animate(
       Array.from(children),
-      { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0px)'] },
-      { duration: 0.7, easing: [0.16, 1, 0.3, 1], delay: stagger(0.08) }
+      { opacity: [0, 1], transform: ['translateY(24px)', 'translateY(0px)'] },
+      { duration: 0.6, easing: 'ease', delay: stagger(0.1) }
     );
   }
   target.querySelectorAll<HTMLElement>('[data-counter]').forEach(startCounter);
 }
 
+function heroEntrance() {
+  const hero = document.querySelector('[data-hero]');
+  if (!hero) return;
+  if (REDUCED) {
+    hero.querySelectorAll<HTMLElement>('.anim-in').forEach((c) => {
+      c.style.opacity = '1';
+      c.style.transform = 'none';
+    });
+    return;
+  }
+  const eyebrow = hero.querySelector<HTMLElement>('[data-hero-eyebrow]');
+  const words = hero.querySelectorAll<HTMLElement>('[data-hero-word]');
+  const sub = hero.querySelector<HTMLElement>('[data-hero-sub]');
+  const cta = hero.querySelector<HTMLElement>('[data-hero-cta]');
+
+  if (eyebrow) {
+    animate(
+      eyebrow,
+      { opacity: [0, 1], transform: ['translateY(12px)', 'translateY(0)'] },
+      { duration: 0.4, easing: 'ease' }
+    );
+  }
+  if (words.length) {
+    animate(
+      Array.from(words),
+      { opacity: [0, 1], transform: ['translateY(24px)', 'translateY(0)'] },
+      { duration: 0.6, easing: 'ease', delay: stagger(0.15, { start: 0.3 }) }
+    );
+  }
+  if (sub) {
+    animate(
+      sub,
+      { opacity: [0, 1], transform: ['translateY(16px)', 'translateY(0)'] },
+      { duration: 0.5, easing: 'ease', delay: 0.3 + words.length * 0.15 + 0.1 }
+    );
+  }
+  if (cta) {
+    animate(
+      cta,
+      { opacity: [0, 1], transform: ['translateY(12px)', 'translateY(0)'] },
+      { duration: 0.4, easing: 'ease', delay: 0.3 + words.length * 0.15 + 0.4 }
+    );
+  }
+}
+
 function init() {
+  heroEntrance();
+
   const targets = document.querySelectorAll<HTMLElement>('[data-reveal]');
   if (REDUCED) {
     targets.forEach((t) => {
@@ -76,7 +123,7 @@ function init() {
         }
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -80px 0px' }
+    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
   );
 
   targets.forEach((t) => io.observe(t));

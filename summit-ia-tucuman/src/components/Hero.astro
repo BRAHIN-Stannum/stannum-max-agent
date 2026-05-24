@@ -1,67 +1,27 @@
 ---
-const stats = [
-  { value: '1000', prefix: '+', suffix: '', label: 'ENTRENADOS' },
-  { value: '4', prefix: '', suffix: '', label: 'DOMINIOS IA' },
-  { value: '100', prefix: '', suffix: '', label: 'CUPOS EXCLUSIVOS' },
-];
+
 ---
 
-<section id="top" class="relative overflow-hidden pt-[120px] pb-24 md:pt-[160px] md:pb-32" data-reveal>
-  <div class="hero-radial"></div>
+<section id="top" data-hero class="relative overflow-hidden pt-[140px] pb-24 md:pt-[180px] md:pb-32">
+  <div class="grain"></div>
+  <div class="container relative">
+    <p class="eyebrow anim-in" data-hero-eyebrow>
+      Workshop exclusivo · Tucumán · 17 de Junio 2026
+    </p>
 
-  <div class="container-stannum relative">
-    <p class="eyebrow anim-in">TUCUMÁN · NOA ARGENTINA · 2026</p>
-
-    <h1 class="mt-10 anim-in">
-      <span class="display-mega block glitch">IA SUMMIT</span>
-      <span class="display-mega block flicker mt-2 md:mt-4">TUCUMÁN 2026</span>
+    <h1 class="mt-10">
+      <span class="headline-xl block anim-in" data-hero-word>IA SUMMIT</span>
+      <span class="headline-xl block anim-in mt-2 md:mt-3" data-hero-word>TUCUMÁN</span>
+      <span class="headline-xl block anim-in mt-2 md:mt-3 accent" data-hero-word>2026</span>
     </h1>
 
-    <div class="mt-12 md:mt-16 max-w-3xl anim-in">
-      <p class="body-lg text-lg md:text-2xl text-primary" style="font-family: var(--font-display); font-weight: 500; letter-spacing: 0.02em;">
-        Workshop exclusivo de Inteligencia Artificial aplicada a negocios.
-      </p>
-      <p class="body-lg mt-6 max-w-2xl">
-        Dejás de ver a la inteligencia artificial como una tendencia y la convertís en tu ventaja
-        competitiva. Un entrenamiento directo con
-        <span class="text-accent font-semibold">Martín Merlini</span> —el entrenador que ya formó a
-        más de 1.000 líderes en LATAM.
-      </p>
-    </div>
+    <p class="body-lg mt-10 md:mt-12 max-w-2xl anim-in" data-hero-sub>
+      Workshop exclusivo de Inteligencia Artificial aplicada a negocios.
+    </p>
 
-    <div class="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 anim-in">
-      {
-        stats.map((s) => (
-          <div class="flex flex-col gap-3 border-t pt-6" style="border-color: rgba(0,229,212,0.4);">
-            <span class="number-lg" data-counter data-target={s.value} data-prefix={s.prefix} data-suffix={s.suffix}>
-              {s.prefix}{s.value}{s.suffix}
-            </span>
-            <span class="eyebrow-muted">{s.label}</span>
-          </div>
-        ))
-      }
-    </div>
-
-    <div class="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-end anim-in">
-      <div class="flex flex-col corner-marks p-6 md:p-8">
-        <span class="eyebrow mb-4">JUNIO 2026</span>
-        <span class="number-mega leading-none">17</span>
-      </div>
-      <div class="flex flex-col gap-6 pb-4 md:pb-8">
-        <div class="laser-line max-w-[120px]"></div>
-        <p class="text-primary text-lg md:text-xl leading-relaxed max-w-md" style="font-family: var(--font-display); font-weight: 500;">
-          Miércoles 17 de Junio 2026
-          <span class="block text-body mt-1">16:00 hs · acreditación 15:30</span>
-          <span class="block text-body">100 cupos · Hotel Hilton Tucumán</span>
-        </p>
-      </div>
-    </div>
-
-    <div class="mt-16 md:mt-20 flex flex-col gap-6 anim-in" id="reservar">
-      <a href="#cta-final" class="btn-primary w-fit">Reservar mi lugar</a>
-      <p class="caption text-muted">
-        Solo 100 ejecutivos · Cupos limitados · Selección requerida
-      </p>
+    <div class="mt-12 md:mt-14 flex flex-col gap-4 anim-in" data-hero-cta>
+      <a href="#cta-final" class="btn-primary btn-primary-lg w-fit">Reservar mi lugar</a>
+      <p class="body-sm">Solo 100 cupos · Selección requerida</p>
     </div>
   </div>
 </section>

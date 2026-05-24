@@ -1,59 +1,40 @@
 ---
 const credenciales = [
-  {
-    head: 'Director Estratégico STANNUM',
-    body: 'Referente nacional en IA aplicada a negocios y entrenamiento ejecutivo en LATAM.',
-  },
-  {
-    head: '+1.000 líderes entrenados en LATAM',
-    body: 'CEOs, directores y gerentes de empresas de todos los sectores.',
-  },
-  {
-    head: '+100 empresas transformadas',
-    body: 'Resultados medibles en los primeros 30 días post-entrenamiento.',
-  },
-  {
-    head: 'RGO ahorra +USD 3.000/mes',
-    body: 'De tercerizar investigación a resolverlo internamente con IA.',
-  },
-  {
-    head: 'TechMBA',
-    body: 'ADEN Business School & George Washington University (EE.UU.). Especialista en IA y Big Data.',
-  },
+  { n: '01', text: 'Director Estratégico STANNUM' },
+  { n: '02', text: '+1.000 líderes entrenados en LATAM' },
+  { n: '03', text: '+100 empresas transformadas' },
+  { n: '04', text: 'RGO ahorra +USD 3.000/mes con IA aplicada' },
+  { n: '05', text: 'TechMBA ADEN Business School & George Washington University (EE.UU.)' },
 ];
 ---
 
-<section id="speaker" class="section relative" data-reveal>
-  <div class="container-stannum">
+<section id="speaker" class="section border-t border-default" data-reveal>
+  <div class="container">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20">
-      <div class="md:col-span-5 anim-in">
-        <p class="eyebrow">EL SPEAKER</p>
-        <h2 class="display-xl-cyan mt-6">Martín<br />Merlini</h2>
-        <p class="caption mt-8 max-w-xs text-muted" style="text-transform: uppercase;">
-          Speaker del Summit · Director Estratégico STANNUM
-        </p>
-        <div class="laser-line mt-10 max-w-[100px]"></div>
-        <p class="body-lg mt-10">
+      <div class="md:col-span-5">
+        <p class="eyebrow anim-in">EL SPEAKER</p>
+        <h2 class="headline-lg mt-6 anim-in">
+          MARTÍN<br /><span class="accent">MERLINI</span>
+        </h2>
+        <p class="body-sm mt-6 anim-in">Director Estratégico STANNUM</p>
+        <p class="body-lg mt-10 anim-in max-w-md">
           Especialista en Marketing Avanzado y Comercialización con más de una década de experiencia
           entrenando líderes y equipos de alto rendimiento.
         </p>
       </div>
 
-      <div class="md:col-span-7 flex flex-col">
+      <ul class="md:col-span-7 flex flex-col">
         {
-          credenciales.map((c, i) => (
-            <div class="anim-in border-t py-8 first:border-t-0 first:pt-0 last:pb-0" style="border-color: rgba(0,229,212,0.2);">
-              <div class="grid grid-cols-[40px_1fr] gap-6 items-start">
-                <span class="caption text-accent pt-2">0{i + 1}</span>
-                <div class="flex flex-col gap-3">
-                  <h3 class="display-md !text-[clamp(18px,2.2vw,28px)]">{c.head}</h3>
-                  <p class="body-lg">{c.body}</p>
-                </div>
-              </div>
-            </div>
+          credenciales.map((c) => (
+            <li class="anim-in border-t border-default py-7 first:border-t-0 first:pt-0 grid grid-cols-[48px_1fr] gap-6 items-baseline">
+              <span class="card-num">{c.n}</span>
+              <span class="headline-md !text-[clamp(1rem,1.6vw,1.25rem)] !font-medium leading-relaxed">
+                {c.text}
+              </span>
+            </li>
           ))
         }
-      </div>
+      </ul>
     </div>
   </div>
 </section>

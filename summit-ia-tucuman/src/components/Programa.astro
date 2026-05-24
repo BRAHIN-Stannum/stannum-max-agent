@@ -2,85 +2,55 @@
 const dominios = [
   {
     n: '01',
-    name: 'Diseño de Prompts Avanzados',
-    dur: '30 minutos',
-    desc: 'Construir instrucciones precisas que generan resultados profesionales.',
-    bullets: [
-      'Fórmula RACS: Rol + Acción + Contexto + Salida',
-      'Exploración de roles: coach, copywriter, analista, estratega',
-    ],
+    name: 'Prompts Avanzados',
+    dur: '30 MIN',
+    desc: 'Construir instrucciones precisas que generan resultados profesionales. Fórmula RACS y exploración de roles.',
   },
   {
     n: '02',
-    name: 'Personalización Avanzada',
-    dur: '30 minutos',
-    desc: 'Configurar ChatGPT para que conozca tu empresa, rol y estilo.',
-    bullets: [
-      'Carga de misión, visión, productos, público objetivo',
-      'Configuración de memoria e instrucciones personalizadas',
-    ],
+    name: 'Personalización',
+    dur: '30 MIN',
+    desc: 'Configurar ChatGPT para que conozca tu empresa, rol y estilo. Memoria e instrucciones personalizadas.',
   },
   {
     n: '03',
     name: 'Funciones Avanzadas',
-    dur: '30 minutos',
-    desc: 'Dominar herramientas que potencian resultados en trabajo real.',
-    bullets: [
-      'Función Busca en la web + Investiga a fondo',
-      'Función Canvas para documentos profesionales',
-    ],
+    dur: '30 MIN',
+    desc: 'Dominar las herramientas que potencian resultados en trabajo real: búsqueda web, investigación, Canvas.',
   },
   {
     n: '04',
-    name: 'Creación de Asistentes Personalizados',
-    dur: '20 minutos',
-    desc: 'Crear asistentes IA personalizados para tu empresa.',
-    bullets: ['Arquitectura de un GPT profesional', 'Demo: GPT Estratégico para tu empresa'],
+    name: 'Asistentes Personalizados',
+    dur: '20 MIN',
+    desc: 'Crear asistentes IA personalizados para tu empresa. Arquitectura de un GPT profesional + demo.',
   },
 ];
 ---
 
-<section id="programa" class="section relative" data-reveal>
-  <div class="container-stannum">
-    <div class="max-w-3xl">
-      <p class="eyebrow anim-in">EL PROGRAMA</p>
-      <h2 class="display-xl mt-6 anim-in">
-        <span class="text-primary">4 Dominios</span>
-        <br />
-        <span class="display-xl-cyan">de IA</span>
-      </h2>
-      <p class="body-lg mt-8 md:mt-10 text-lg anim-in">
-        Cuatro bloques de entrenamiento directo. Sin teoría vacía — aplicación real en tu empresa
-        desde el primer día.
-      </p>
-    </div>
+<section id="programa" class="section section-alt border-t border-default" data-reveal>
+  <div class="container">
+    <p class="eyebrow anim-in">EL PROGRAMA</p>
+    <h2 class="headline-lg mt-6 anim-in">
+      4 DOMINIOS DE <span class="accent">IA</span>
+    </h2>
+    <p class="body-lg mt-8 max-w-2xl anim-in">
+      Cuatro bloques de entrenamiento directo. Sin teoría vacía — aplicación real en tu empresa
+      desde el primer día.
+    </p>
 
-    <div class="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+    <div class="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-5">
       {
         dominios.map((d) => (
-          <article class="card anim-in flex flex-col gap-6">
+          <article class="card anim-in flex flex-col gap-5">
             <div class="flex items-baseline justify-between">
-              <span class="caption text-accent">{d.n} · DOMINIO</span>
-              <span class="caption text-muted">{d.dur}</span>
+              <span class="card-num">{d.n}</span>
+              <span class="body-sm tracking-[0.15em] uppercase">{d.dur}</span>
             </div>
-            <h3 class="display-md mt-2">{d.name}</h3>
-            <div class="laser-line max-w-[60px]" />
+            <h3 class="headline-md">{d.name}</h3>
             <p class="body-lg">{d.desc}</p>
-            <ul class="flex flex-col gap-3 mt-2">
-              {d.bullets.map((b) => (
-                <li class="body-sm flex gap-3">
-                  <span class="text-accent shrink-0">—</span>
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
           </article>
         ))
       }
     </div>
-
-    <p class="caption mt-16 md:mt-20 text-center text-muted anim-in">
-      17 de Junio · Hotel Hilton Tucumán
-    </p>
   </div>
 </section>

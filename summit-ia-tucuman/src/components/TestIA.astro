@@ -3,83 +3,59 @@ const niveles = [
   {
     n: '01',
     name: 'Novato',
-    range: '0–3 pts',
-    desc: 'La IA todavía no entró en tu trabajo. El Summit te da las primeras herramientas aplicadas ese mismo día.',
+    range: '0–3 PTS',
+    desc: 'La IA todavía no entró en tu trabajo. El Summit te da las primeras herramientas aplicadas.',
   },
   {
     n: '02',
     name: 'Copiloto',
-    range: '4–7 pts',
+    range: '4–7 PTS',
     desc: 'Ya probaste la IA pero no la potenciás. En el Summit cruzás esa barrera de una vez.',
   },
   {
     n: '03',
     name: 'Experto',
-    range: '8–11 pts',
-    desc: 'La IA ya es parte de tu flujo. Operás en el 15% que se mueve primero. En el Summit compartís con pares.',
+    range: '8–11 PTS',
+    desc: 'La IA ya es parte de tu flujo. Operás en el 15% que se mueve primero.',
   },
   {
     n: '04',
     name: 'Líder IA',
-    range: '12–15 pts',
-    desc: 'La IA es infraestructura de tu empresa. Operás en una liga diferente. Tu presencia eleva el nivel del evento.',
+    range: '12–15 PTS',
+    desc: 'La IA es infraestructura de tu empresa. Tu presencia eleva el nivel del evento.',
   },
-];
-
-const stats = [
-  { value: '4', suffix: ' MIN', label: 'PARA COMPLETAR' },
-  { value: '0', suffix: 'S', label: 'RESULTADO' },
-  { value: '200', prefix: '+', label: 'YA LO HICIERON' },
 ];
 ---
 
-<section id="test" class="section relative" data-reveal>
-  <div class="container-stannum">
-    <div class="max-w-3xl">
-      <p class="eyebrow anim-in">EXPLORÁ · TEST DE DOMINIO IA</p>
-      <h2 class="display-xl mt-6 anim-in">
-        <span class="text-primary">¿En qué nivel</span>
-        <br />
-        <span class="display-xl-cyan">operás?</span>
-      </h2>
-      <p class="body-lg mt-8 md:mt-10 text-lg anim-in">
-        El 90% de los CEOs cree que usa bien la IA. Solo el 12% realmente la aprovecha como ventaja
-        competitiva. Hacé el diagnóstico y descubrí dónde estás.
-      </p>
-    </div>
+<section id="test" class="section section-alt border-t border-default" data-reveal>
+  <div class="container">
+    <p class="eyebrow anim-in">EVALUÁ TU NIVEL</p>
+    <h2 class="headline-lg mt-6 anim-in">
+      ¿EN QUÉ NIVEL <span class="accent">OPERÁS?</span>
+    </h2>
+    <p class="body-lg mt-8 max-w-2xl anim-in">
+      El 90% de los CEOs cree que usa bien la IA. Solo el 12% realmente la aprovecha como ventaja
+      competitiva.
+    </p>
 
-    <div class="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+    <div class="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
       {
         niveles.map((nv) => (
-          <article class="card anim-in flex flex-col gap-6">
-            <div class="flex items-start justify-between">
-              <span class="number-lg !text-[clamp(56px,7vw,96px)] !leading-none">{nv.n}</span>
-              <span class="caption pt-3">{nv.range}</span>
+          <article class="card anim-in flex flex-col gap-5">
+            <div class="flex items-baseline justify-between">
+              <span class="card-num">{nv.n}</span>
+              <span class="body-sm tracking-[0.15em] uppercase">{nv.range}</span>
             </div>
-            <div class="laser-line max-w-[60px]" />
-            <h3 class="display-md">{nv.name}</h3>
-            <p class="body-lg">{nv.desc}</p>
+            <h3 class="headline-md">{nv.name}</h3>
+            <p class="body-lg !text-base">{nv.desc}</p>
           </article>
         ))
       }
     </div>
 
-    <div class="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
-      {
-        stats.map((s) => (
-          <div class="flex flex-col gap-3 border-t pt-6 anim-in" style="border-color: rgba(0,229,212,0.4);">
-            <span class="display-md text-accent !text-[clamp(28px,3.5vw,44px)]">
-              {s.prefix || ''}{s.value === '0' ? 'Inmediato' : s.value}{s.suffix || ''}
-            </span>
-            <span class="eyebrow-muted">{s.label}</span>
-          </div>
-        ))
-      }
-    </div>
-
-    <div class="mt-16 md:mt-20 flex flex-col gap-4 anim-in">
-      <a href="#cta-final" class="btn-primary w-fit">Hacer el test de diagnóstico</a>
-      <p class="caption text-muted">Gratuito · Sin compromiso · Resultado inmediato</p>
+    <div class="mt-16 anim-in">
+      <a href="#cta-final" class="btn-primary w-fit">Hacer el test</a>
+      <p class="body-sm mt-4">Gratuito · Sin compromiso · Resultado inmediato</p>
     </div>
   </div>
 </section>

@@ -3,40 +3,29 @@ import stannumLogo from '../assets/stannum-logo.svg';
 import laurentLogo from '../assets/laurent-logo.svg';
 ---
 
-<footer class="relative pt-20 md:pt-24 pb-12 overflow-hidden border-t" style="border-color: rgba(0,229,212,0.2);">
-  <div class="container-stannum relative">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
-      <div class="md:col-span-7">
-        <p class="eyebrow">SUMMIT IA TUCUMÁN 2026</p>
-        <p class="display-md mt-6 max-w-md">
-          <span class="text-accent">17 de Junio</span>
-          <br />Hotel Hilton Tucumán
-        </p>
-        <p class="body-sm mt-6 text-muted">Solo 100 cupos · Selección requerida</p>
+<footer class="border-t border-default pt-16 pb-10">
+  <div class="container">
+    <p class="eyebrow">ORGANIZAN</p>
+
+    <div class="mt-8 flex flex-wrap items-center gap-x-10 gap-y-6">
+      <div class="flex items-center gap-3">
+        <img src={stannumLogo.src} alt="STANNUM" width="40" height="40" class="w-10 h-10" />
+        <span class="text-primary font-bold uppercase tracking-[0.12em] text-sm">STANNUM</span>
       </div>
 
-      <div class="md:col-span-5 flex flex-col gap-6 md:items-end">
-        <a href="#" class="btn-tertiary">WhatsApp →</a>
-        <a href="#reservar" class="btn-tertiary">Reservar mi lugar →</a>
+      <span class="text-secondary text-2xl">·</span>
+
+      <div class="flex items-center gap-3">
+        <img src={laurentLogo.src} alt="LAURENT" width="40" height="40" class="w-10 h-10" />
+        <span class="text-primary font-bold uppercase tracking-[0.12em] text-sm">LAURENT</span>
       </div>
     </div>
 
-    <div class="mt-20 md:mt-24 pt-10 border-t flex flex-col md:flex-row md:items-center md:justify-between gap-8" style="border-color: rgba(0,229,212,0.2);">
-      <div class="flex flex-col gap-4">
-        <span class="eyebrow-muted">ORGANIZAN</span>
-        <div class="flex items-center gap-6">
-          <div class="flex items-center gap-3">
-            <img src={stannumLogo.src} alt="STANNUM" width="40" height="40" class="w-10 h-10" />
-            <span class="text-primary text-sm font-bold tracking-[0.18em] uppercase" style="font-family: var(--font-techno);">STANNUM</span>
-          </div>
-          <span class="text-accent text-xl">+</span>
-          <div class="flex items-center gap-3">
-            <img src={laurentLogo.src} alt="LAURENT" width="40" height="40" class="w-10 h-10" />
-            <span class="text-primary text-sm font-bold tracking-[0.18em] uppercase" style="font-family: var(--font-techno);">LAURENT</span>
-          </div>
-        </div>
-      </div>
-      <p class="caption text-muted">© 2026 Summit IA Tucumán</p>
+    <div class="divider mt-12"></div>
+
+    <div class="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <p class="body-sm">© 2026 Summit IA Tucumán · STANNUM · LAURENT</p>
+      <p class="body-sm">17 de Junio 2026 · Hotel Hilton Tucumán</p>
     </div>
   </div>
 </footer>

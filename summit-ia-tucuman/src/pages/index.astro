@@ -2,31 +2,28 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
-import Countdown from '../components/Countdown.astro';
-import TestIA from '../components/TestIA.astro';
-import Resultados from '../components/Resultados.astro';
+import Stats from '../components/Stats.astro';
+import DateBlock from '../components/DateBlock.astro';
 import Speaker from '../components/Speaker.astro';
 import Programa from '../components/Programa.astro';
-import Agenda from '../components/Agenda.astro';
 import Incluido from '../components/Incluido.astro';
-import FAQ from '../components/FAQ.astro';
+import TestIA from '../components/TestIA.astro';
+import Resultados from '../components/Resultados.astro';
 import CTAFinal from '../components/CTAFinal.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout>
-  <div class="scan-line" aria-hidden="true"></div>
   <Nav />
   <main>
     <Hero />
-    <Countdown />
-    <TestIA />
-    <Resultados />
+    <Stats />
+    <DateBlock />
     <Speaker />
     <Programa />
-    <Agenda />
     <Incluido />
-    <FAQ />
+    <TestIA />
+    <Resultados />
     <CTAFinal />
   </main>
   <Footer />
