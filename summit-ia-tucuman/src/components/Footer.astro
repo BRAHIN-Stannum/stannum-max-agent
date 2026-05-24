@@ -7,17 +7,22 @@ import laurentLogo from '../assets/laurent-logo.svg';
   <div class="container">
     <p class="eyebrow">ORGANIZAN</p>
 
-    <div class="mt-8 flex flex-wrap items-center gap-x-10 gap-y-6">
-      <div class="flex items-center gap-3">
-        <img src={stannumLogo.src} alt="STANNUM" width="40" height="40" class="w-10 h-10" />
-        <span class="text-primary font-bold uppercase tracking-[0.12em] text-sm">STANNUM</span>
+    <div class="mt-8 flex flex-wrap items-start gap-x-12 gap-y-8">
+      <div class="flex items-center gap-4">
+        <img src={stannumLogo.src} alt="STANNUM" width="44" height="44" class="w-11 h-11" />
+        <span class="text-primary font-black uppercase tracking-[0.12em] text-base">STANNUM</span>
       </div>
 
-      <span class="text-secondary text-2xl">·</span>
+      <span class="text-secondary text-2xl self-center hidden md:inline">·</span>
 
-      <div class="flex items-center gap-3">
-        <img src={laurentLogo.src} alt="LAURENT" width="40" height="40" class="w-10 h-10" />
-        <span class="text-primary font-bold uppercase tracking-[0.12em] text-sm">LAURENT</span>
+      <div class="flex items-center gap-4">
+        <img src={laurentLogo.src} alt="LAURENT" width="44" height="44" class="w-11 h-11" />
+        <div class="flex flex-col leading-tight">
+          <span class="text-primary font-bold uppercase tracking-[0.12em] text-sm">
+            Gabriel Páez Laurent
+          </span>
+          <span class="text-secondary text-xs mt-1">Agencia Digital</span>
+        </div>
       </div>
     </div>
 

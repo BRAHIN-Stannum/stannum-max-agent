@@ -10,11 +10,11 @@
   --color-text-secondary: #888888;
   --color-text-body: #cccccc;
 
-  --color-accent: #00e5d4;
+  --color-accent: #32cbbf;
 
   --color-border-default: #1e1e26;
-  --color-border-accent-soft: rgba(0, 229, 212, 0.25);
-  --color-border-accent-full: #00e5d4;
+  --color-border-accent-soft: rgba(50, 203, 191, 0.25);
+  --color-border-accent-full: #32cbbf;
 
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
 
@@ -53,7 +53,7 @@
   }
 
   ::selection {
-    background: rgba(0, 229, 212, 0.22);
+    background: rgba(50, 203, 191, 0.22);
     color: #ffffff;
   }
 
@@ -170,7 +170,7 @@
   }
 
   .btn-primary:hover {
-    background: rgba(0, 229, 212, 0.04);
+    background: rgba(50, 203, 191, 0.04);
   }
 
   .btn-primary-lg {
