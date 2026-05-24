@@ -1,6 +1,6 @@
 ---
 import stannumLogo from '../assets/stannum-logo.svg';
-import laurentLogo from '../assets/laurent-logo.svg';
+import LogoAgenciaG from './LogoAgenciaG.astro';
 ---
 
 <footer class="border-t border-default pt-16 pb-10">
@@ -16,12 +16,12 @@ import laurentLogo from '../assets/laurent-logo.svg';
       <span class="text-secondary text-2xl self-center hidden md:inline">·</span>
 
       <div class="flex items-center gap-4">
-        <img src={laurentLogo.src} alt="LAURENT" width="44" height="44" class="w-11 h-11" />
+        <LogoAgenciaG size={44} fill="#FFFFFF" />
         <div class="flex flex-col leading-tight">
-          <span class="text-primary font-bold uppercase tracking-[0.12em] text-sm">
+          <span class="text-primary font-bold uppercase tracking-[0.08em]" style="font-size: 0.85rem;">
             Gabriel Páez Laurent
           </span>
-          <span class="text-secondary text-xs mt-1">Agencia Digital</span>
+          <span class="text-secondary mt-1" style="font-size: 0.75rem;">Agencia Digital</span>
         </div>
       </div>
     </div>
