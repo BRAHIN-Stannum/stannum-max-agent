@@ -2,7 +2,9 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://summit-ia-tucuman.stannum.workers.dev',
+  site: 'https://brahin-stannum.github.io',
+  base: '/stannum-max-agent/',
+  trailingSlash: 'ignore',
   vite: {
     plugins: [tailwindcss()],
   },
