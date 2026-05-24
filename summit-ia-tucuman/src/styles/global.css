@@ -103,7 +103,7 @@
   }
 
   .display-mega {
-    font-size: clamp(96px, 16vw, 280px);
+    font-size: clamp(64px, 16vw, 280px);
     font-weight: 800;
     letter-spacing: -0.05em;
     line-height: 0.85;
