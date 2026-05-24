@@ -1,0 +1,37 @@
+---
+import Watermark from './Watermark.astro';
+---
+
+<footer class="relative border-t border-default pt-20 md:pt-24 pb-12 overflow-hidden">
+  <div class="container-stannum relative">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+      <div class="md:col-span-7">
+        <p class="eyebrow">SUMMIT IA TUCUMÁN 2026</p>
+        <p class="display-md mt-6 max-w-md">
+          21 de Mayo<br />Hotel Hilton Tucumán
+        </p>
+        <p class="body-sm mt-6">Solo 100 cupos · Selección requerida</p>
+      </div>
+
+      <div class="md:col-span-5 flex flex-col gap-6 md:items-end">
+        <a href="#" class="btn-tertiary">WhatsApp →</a>
+        <a href="#reservar" class="btn-tertiary">Reservar mi lugar →</a>
+      </div>
+    </div>
+
+    <div class="mt-20 md:mt-24 pt-10 border-t border-default flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="relative w-12 h-12 shrink-0">
+          <svg viewBox="0 0 400 400" fill="none" stroke="#F5F5F7" stroke-width="2" class="w-full h-full" style="opacity:0.4" aria-hidden="true">
+            <circle cx="200" cy="200" r="180"></circle>
+            <polygon points="200,40 340,280 60,280"></polygon>
+            <polygon points="200,360 60,120 340,120"></polygon>
+            <circle cx="200" cy="200" r="60"></circle>
+          </svg>
+        </div>
+        <span class="caption">Con la participación de STANNUM</span>
+      </div>
+      <p class="caption">© 2026 Summit IA Tucumán</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,70 @@
+---
+import Watermark from './Watermark.astro';
+
+const stats = [
+  { value: '+1.000', label: 'ENTRENADOS' },
+  { value: '4', label: 'DOMINIOS IA' },
+  { value: '100', label: 'CUPOS EXCLUSIVOS' },
+];
+---
+
+<section id="top" class="relative overflow-hidden pt-[120px] pb-24 md:pt-[160px] md:pb-32" data-reveal>
+  <div class="hero-radial"></div>
+  <div class="grain"></div>
+  <Watermark size={520} opacity={0.04} position="tr" />
+
+  <div class="container-stannum relative">
+    <p class="eyebrow anim-in">TUCUMÁN · NOA ARGENTINA · 2026</p>
+
+    <h1 class="mt-8 anim-in">
+      <span class="block text-primary text-sm md:text-base font-medium tracking-[0.32em] uppercase mb-4">
+        Summit IA
+      </span>
+      <span class="display-mega block">TUCUMÁN</span>
+    </h1>
+
+    <div class="mt-12 md:mt-16 max-w-3xl anim-in">
+      <p class="body-lg text-body text-lg md:text-xl">
+        Dejás de ver a la inteligencia artificial como una tendencia y la convertís en tu ventaja
+        competitiva.
+        <span class="text-primary">
+          Un entrenamiento directo con Martín Merlini —el entrenador que ya formó a más de 1.000
+          líderes en LATAM.
+        </span>
+      </p>
+    </div>
+
+    <div class="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 anim-in">
+      {
+        stats.map((s) => (
+          <div class="flex flex-col gap-2 border-t border-default pt-6">
+            <span class="number-lg !text-[clamp(48px,7vw,88px)]">{s.value}</span>
+            <span class="eyebrow">{s.label}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-end anim-in">
+      <div class="flex flex-col">
+        <span class="eyebrow mb-4">MAYO 2026</span>
+        <span class="number-mega leading-none">21</span>
+      </div>
+      <div class="flex flex-col gap-6 pb-4 md:pb-8">
+        <div class="laser-line max-w-[120px]"></div>
+        <p class="text-primary text-lg md:text-xl leading-relaxed max-w-md">
+          Jueves 21 de Mayo 2026
+          <span class="block text-body mt-1">16:00 hs · acreditación 15:30</span>
+          <span class="block text-body">100 cupos · Hotel Hilton Tucumán</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16 md:mt-20 flex flex-col gap-6 anim-in" id="reservar">
+      <a href="#cta-final" class="btn-primary w-fit">Reservar mi lugar</a>
+      <p class="caption">
+        Solo 100 ejecutivos · Cupos limitados · Selección requerida
+      </p>
+    </div>
+  </div>
+</section>

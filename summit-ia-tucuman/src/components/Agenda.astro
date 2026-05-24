@@ -1,0 +1,67 @@
+---
+const items = [
+  {
+    time: '15:30',
+    title: 'Acreditación y networking previo',
+    desc: '15:30 – 16:00',
+  },
+  {
+    time: '16:00',
+    title: 'Apertura institucional',
+    desc: '16:00 – 16:15 · Apertura del Summit',
+  },
+  {
+    time: '16:15',
+    title: 'Bloque 1: IA aplicada a negocios',
+    desc: '16:15 – 17:30 · Demos en vivo',
+  },
+  {
+    time: '17:30',
+    title: 'Break y activación de sponsors',
+    desc: '17:30 – 17:50',
+  },
+  {
+    time: '17:50',
+    title: 'Bloque 2: Casos de uso y transformación',
+    desc: '17:50 – 19:00 · Herramientas y transformación organizacional',
+  },
+  {
+    time: '19:00',
+    title: 'Cierre, propuestas y networking final',
+    desc: '19:00 – 19:20',
+  },
+];
+---
+
+<section class="section relative border-t border-default" data-reveal>
+  <div class="container-stannum">
+    <div class="max-w-3xl">
+      <p class="eyebrow anim-in">PROGRAMA DEL DÍA</p>
+      <h2 class="display-xl mt-6 anim-in">Agenda<br />del evento</h2>
+      <p class="body-lg mt-8 md:mt-10 text-lg anim-in">
+        4 horas de entrenamiento activo. Formación práctica, demos en vivo y networking de alto
+        nivel.
+      </p>
+    </div>
+
+    <div class="mt-20 md:mt-24 flex flex-col">
+      {
+        items.map((it, i) => (
+          <div class="anim-in grid grid-cols-[auto_1fr] md:grid-cols-[180px_1fr] gap-6 md:gap-16 py-8 md:py-10 border-t border-default last:border-b">
+            <span class="number-lg !text-[clamp(40px,5vw,72px)] !leading-none !font-bold">
+              {it.time}
+            </span>
+            <div class="flex flex-col gap-3 pt-1">
+              <h3 class="display-md !text-[clamp(20px,2.5vw,36px)]">{it.title}</h3>
+              <p class="body-sm">{it.desc}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="caption mt-12 md:mt-16 anim-in">
+      Pantalla LED, sonido profesional e internet dedicado. Break incluido.
+    </p>
+  </div>
+</section>

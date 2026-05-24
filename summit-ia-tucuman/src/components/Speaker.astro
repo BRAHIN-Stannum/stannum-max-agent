@@ -1,0 +1,56 @@
+---
+const credenciales = [
+  {
+    head: '+1.000 líderes entrenados en LATAM',
+    body: 'CEOs, directores y gerentes de empresas de todos los sectores.',
+  },
+  {
+    head: '+100 empresas transformadas',
+    body: 'Resultados medibles en los primeros 30 días post-entrenamiento.',
+  },
+  {
+    head: 'RGO ahorra +USD 3.000 por mes',
+    body: 'De tercerizar investigación a resolverlo internamente con IA.',
+  },
+  {
+    head: 'TechMBA',
+    body: 'ADEN Business School & George Washington University (EE.UU.). Especialista en IA y Big Data.',
+  },
+];
+---
+
+<section id="speaker" class="section relative overflow-hidden border-t border-default" data-reveal>
+  <div class="grain"></div>
+  <div class="container-stannum relative">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20">
+      <div class="md:col-span-5 anim-in">
+        <p class="eyebrow">EL ENTRENADOR</p>
+        <h2 class="display-xl mt-6">Martín<br />Merlini</h2>
+        <p class="caption mt-8 max-w-xs">
+          Speaker del Summit · Entrenador en Inteligencia Artificial
+        </p>
+        <div class="laser-line mt-10 max-w-[100px]"></div>
+        <p class="body-lg mt-10">
+          Especialista en Marketing Avanzado y Comercialización con más de una década de experiencia
+          entrenando líderes y equipos de alto rendimiento.
+        </p>
+      </div>
+
+      <div class="md:col-span-7 flex flex-col">
+        {
+          credenciales.map((c, i) => (
+            <div class="anim-in border-t border-default py-8 first:border-t-0 first:pt-0 last:pb-0">
+              <div class="grid grid-cols-[40px_1fr] gap-6 items-start">
+                <span class="caption text-accent pt-2">0{i + 1}</span>
+                <div class="flex flex-col gap-3">
+                  <h3 class="display-md !text-[clamp(20px,2.5vw,32px)]">{c.head}</h3>
+                  <p class="body-lg">{c.body}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

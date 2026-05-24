@@ -1,0 +1,45 @@
+---
+import Watermark from './Watermark.astro';
+---
+
+<section class="section relative overflow-hidden border-t border-default" data-reveal>
+  <Watermark size={380} opacity={0.04} position="bl" />
+
+  <div class="container-stannum relative">
+    <div class="max-w-3xl">
+      <p class="eyebrow anim-in">RESULTADOS COMPROBADOS</p>
+      <h2 class="display-xl mt-6 anim-in">
+        Argentina lo validó.<br />
+        <span class="text-body font-normal">El NOA es el próximo paso.</span>
+      </h2>
+      <p class="body-lg mt-8 md:mt-10 text-lg anim-in">
+        +1.000 líderes entrenados y +100 empresas transformadas en Argentina. Este es el primer
+        Summit en Tucumán — y eso es exactamente la ventaja.
+      </p>
+    </div>
+
+    <div class="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+      <article class="card md:col-span-7 anim-in flex flex-col gap-8">
+        <span class="caption">TESTIMONIO · RGO</span>
+        <blockquote class="display-md !leading-tight !font-normal text-primary">
+          "Ahorra más de
+          <span class="font-bold text-accent">USD 3.000 por mes</span>
+          en investigación. Lo que antes tercerizaban a agencias externas, hoy lo resuelven
+          internamente con IA. El equipo directivo aprendió a usar herramientas de investigación con
+          IA en una sola sesión."
+        </blockquote>
+        <div class="laser-line max-w-[60px]"></div>
+        <p class="body-sm">RGO · Investigación &amp; Consultoría · 30 días</p>
+      </article>
+
+      <div class="md:col-span-5 anim-in flex flex-col justify-center gap-6 border-t border-default pt-8 md:border-0 md:pt-0">
+        <span class="number-mega !text-[clamp(80px,11vw,160px)]">+100</span>
+        <p class="body-lg">
+          Las empresas que pasan por el entrenamiento implementan al menos una automatización de
+          alto impacto en los primeros 30 días.
+        </p>
+        <p class="caption">+100 empresas entrenadas · Promedio del programa de IA aplicada</p>
+      </div>
+    </div>
+  </div>
+</section>

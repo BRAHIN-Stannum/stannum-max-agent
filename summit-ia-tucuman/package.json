@@ -1,0 +1,19 @@
+{
+  "name": "summit-ia-tucuman",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "preview": "astro preview --host 0.0.0.0",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.1.1",
+    "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "motion": "^11.15.0",
+    "@fontsource-variable/inter": "^5.1.0"
+  }
+}
