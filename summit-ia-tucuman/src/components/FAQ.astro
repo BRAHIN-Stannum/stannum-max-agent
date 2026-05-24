@@ -1,0 +1,73 @@
+---
+const items = [
+  {
+    q: '¿Puedo llevar a alguien de mi equipo?',
+    a: 'Sí. Cada participante necesita su propio cupo confirmado, ya que el aforo es limitado a 100 ejecutivos. Coordinamos cupos adicionales por inscripción.',
+  },
+  {
+    q: '¿Hay estacionamiento en el Hilton Tucumán?',
+    a: '[Respuesta a confirmar con el venue]',
+  },
+  {
+    q: '¿Me dan certificado de participación?',
+    a: 'Sí. Todos los participantes reciben certificado digital de Summit IA Tucumán 2026 al finalizar el evento.',
+  },
+  {
+    q: '¿Van a grabar el evento?',
+    a: '[Respuesta a confirmar]',
+  },
+  {
+    q: '¿Hay vestimenta sugerida?',
+    a: 'Vestimenta ejecutiva o business casual. El contexto es corporativo, sin formalidad estricta.',
+  },
+  {
+    q: '¿El evento es en español?',
+    a: 'Sí, el Summit es íntegramente en español. Todo el material y las demos están en español.',
+  },
+  {
+    q: '¿Necesito experiencia previa con IA?',
+    a: 'No. El programa está diseñado para todos los niveles, desde Novato hasta Líder IA. El Test de Dominio te ubica antes del evento para que aproveches al máximo cada bloque.',
+  },
+];
+---
+
+<section class="section section-alt border-t border-default" data-reveal>
+  <div class="container">
+    <p class="eyebrow anim-in">PREGUNTAS FRECUENTES</p>
+    <h2 class="headline-lg mt-6 anim-in">
+      LO QUE NECESITÁS <span class="accent">SABER</span>
+    </h2>
+
+    <div class="mt-16 md:mt-20 max-w-4xl">
+      {
+        items.map((it) => (
+          <div class="anim-in border-b border-default" data-faq-item data-open="false">
+            <button
+              data-faq-trigger
+              aria-expanded="false"
+              class="w-full flex items-start justify-between gap-8 py-7 md:py-8 text-left group"
+            >
+              <span class="headline-md !text-[clamp(1rem,1.6vw,1.25rem)] !font-medium text-primary group-hover:text-accent transition-colors duration-300">
+                {it.q}
+              </span>
+              <span
+                data-faq-icon
+                class="accent text-xl shrink-0 mt-1 select-none"
+                aria-hidden="true"
+              >
+                +
+              </span>
+            </button>
+            <div data-faq-panel aria-hidden="true">
+              <p class="body-lg pb-7 md:pb-8 max-w-3xl">{it.a}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/faq.ts';
+</script>
