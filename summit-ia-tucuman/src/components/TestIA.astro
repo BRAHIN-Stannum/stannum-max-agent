@@ -27,19 +27,21 @@ const niveles = [
 ];
 
 const stats = [
-  { value: '4 min', label: 'PARA COMPLETAR' },
-  { value: 'Inmediato', label: 'RESULTADO' },
-  { value: '+200', label: 'YA LO HICIERON' },
+  { value: '4', suffix: ' MIN', label: 'PARA COMPLETAR' },
+  { value: '0', suffix: 'S', label: 'RESULTADO' },
+  { value: '200', prefix: '+', label: 'YA LO HICIERON' },
 ];
 ---
 
-<section id="test" class="section relative overflow-hidden border-t border-default" data-reveal>
-  <div class="grain"></div>
-
-  <div class="container-stannum relative">
+<section id="test" class="section relative" data-reveal>
+  <div class="container-stannum">
     <div class="max-w-3xl">
       <p class="eyebrow anim-in">EXPLORÁ · TEST DE DOMINIO IA</p>
-      <h2 class="display-xl mt-6 anim-in">¿En qué nivel <br />operás?</h2>
+      <h2 class="display-xl mt-6 anim-in">
+        <span class="text-primary">¿En qué nivel</span>
+        <br />
+        <span class="display-xl-cyan">operás?</span>
+      </h2>
       <p class="body-lg mt-8 md:mt-10 text-lg anim-in">
         El 90% de los CEOs cree que usa bien la IA. Solo el 12% realmente la aprovecha como ventaja
         competitiva. Hacé el diagnóstico y descubrí dónde estás.
@@ -54,7 +56,7 @@ const stats = [
               <span class="number-lg !text-[clamp(56px,7vw,96px)] !leading-none">{nv.n}</span>
               <span class="caption pt-3">{nv.range}</span>
             </div>
-            <div class="laser-line max-w-[60px] opacity-40" />
+            <div class="laser-line max-w-[60px]" />
             <h3 class="display-md">{nv.name}</h3>
             <p class="body-lg">{nv.desc}</p>
           </article>
@@ -65,9 +67,11 @@ const stats = [
     <div class="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
       {
         stats.map((s) => (
-          <div class="flex flex-col gap-2 border-t border-default pt-6 anim-in">
-            <span class="display-md !font-extrabold">{s.value}</span>
-            <span class="eyebrow">{s.label}</span>
+          <div class="flex flex-col gap-3 border-t pt-6 anim-in" style="border-color: rgba(0,229,212,0.4);">
+            <span class="display-md text-accent !text-[clamp(28px,3.5vw,44px)]">
+              {s.prefix || ''}{s.value === '0' ? 'Inmediato' : s.value}{s.suffix || ''}
+            </span>
+            <span class="eyebrow-muted">{s.label}</span>
           </div>
         ))
       }
@@ -75,7 +79,7 @@ const stats = [
 
     <div class="mt-16 md:mt-20 flex flex-col gap-4 anim-in">
       <a href="#cta-final" class="btn-primary w-fit">Hacer el test de diagnóstico</a>
-      <p class="caption">Gratuito · Sin compromiso · Resultado inmediato</p>
+      <p class="caption text-muted">Gratuito · Sin compromiso · Resultado inmediato</p>
     </div>
   </div>
 </section>

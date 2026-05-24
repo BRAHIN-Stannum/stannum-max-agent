@@ -1,16 +1,18 @@
 ---
-import Watermark from './Watermark.astro';
+import stannumLogo from '../assets/stannum-logo.svg';
+import laurentLogo from '../assets/laurent-logo.svg';
 ---
 
-<footer class="relative border-t border-default pt-20 md:pt-24 pb-12 overflow-hidden">
+<footer class="relative pt-20 md:pt-24 pb-12 overflow-hidden border-t" style="border-color: rgba(0,229,212,0.2);">
   <div class="container-stannum relative">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
       <div class="md:col-span-7">
         <p class="eyebrow">SUMMIT IA TUCUMÁN 2026</p>
         <p class="display-md mt-6 max-w-md">
-          21 de Mayo<br />Hotel Hilton Tucumán
+          <span class="text-accent">17 de Junio</span>
+          <br />Hotel Hilton Tucumán
         </p>
-        <p class="body-sm mt-6">Solo 100 cupos · Selección requerida</p>
+        <p class="body-sm mt-6 text-muted">Solo 100 cupos · Selección requerida</p>
       </div>
 
       <div class="md:col-span-5 flex flex-col gap-6 md:items-end">
@@ -19,19 +21,22 @@ import Watermark from './Watermark.astro';
       </div>
     </div>
 
-    <div class="mt-20 md:mt-24 pt-10 border-t border-default flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <div class="flex items-center gap-4">
-        <div class="relative w-12 h-12 shrink-0">
-          <svg viewBox="0 0 400 400" fill="none" stroke="#F5F5F7" stroke-width="2" class="w-full h-full" style="opacity:0.4" aria-hidden="true">
-            <circle cx="200" cy="200" r="180"></circle>
-            <polygon points="200,40 340,280 60,280"></polygon>
-            <polygon points="200,360 60,120 340,120"></polygon>
-            <circle cx="200" cy="200" r="60"></circle>
-          </svg>
+    <div class="mt-20 md:mt-24 pt-10 border-t flex flex-col md:flex-row md:items-center md:justify-between gap-8" style="border-color: rgba(0,229,212,0.2);">
+      <div class="flex flex-col gap-4">
+        <span class="eyebrow-muted">ORGANIZAN</span>
+        <div class="flex items-center gap-6">
+          <div class="flex items-center gap-3">
+            <img src={stannumLogo.src} alt="STANNUM" width="40" height="40" class="w-10 h-10" />
+            <span class="text-primary text-sm font-bold tracking-[0.18em] uppercase" style="font-family: var(--font-techno);">STANNUM</span>
+          </div>
+          <span class="text-accent text-xl">+</span>
+          <div class="flex items-center gap-3">
+            <img src={laurentLogo.src} alt="LAURENT" width="40" height="40" class="w-10 h-10" />
+            <span class="text-primary text-sm font-bold tracking-[0.18em] uppercase" style="font-family: var(--font-techno);">LAURENT</span>
+          </div>
         </div>
-        <span class="caption">Con la participación de STANNUM</span>
       </div>
-      <p class="caption">© 2026 Summit IA Tucumán</p>
+      <p class="caption text-muted">© 2026 Summit IA Tucumán</p>
     </div>
   </div>
 </footer>

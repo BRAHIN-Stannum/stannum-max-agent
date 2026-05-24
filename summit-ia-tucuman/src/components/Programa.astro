@@ -1,6 +1,4 @@
 ---
-import Watermark from './Watermark.astro';
-
 const dominios = [
   {
     n: '01',
@@ -42,13 +40,15 @@ const dominios = [
 ];
 ---
 
-<section id="programa" class="section relative overflow-hidden border-t border-default" data-reveal>
-  <Watermark size={460} opacity={0.04} position="tr" />
-
-  <div class="container-stannum relative">
+<section id="programa" class="section relative" data-reveal>
+  <div class="container-stannum">
     <div class="max-w-3xl">
       <p class="eyebrow anim-in">EL PROGRAMA</p>
-      <h2 class="display-xl mt-6 anim-in">4 Dominios<br />de IA</h2>
+      <h2 class="display-xl mt-6 anim-in">
+        <span class="text-primary">4 Dominios</span>
+        <br />
+        <span class="display-xl-cyan">de IA</span>
+      </h2>
       <p class="body-lg mt-8 md:mt-10 text-lg anim-in">
         Cuatro bloques de entrenamiento directo. Sin teoría vacía — aplicación real en tu empresa
         desde el primer día.
@@ -60,11 +60,11 @@ const dominios = [
         dominios.map((d) => (
           <article class="card anim-in flex flex-col gap-6">
             <div class="flex items-baseline justify-between">
-              <span class="caption">{d.n} · DOMINIO</span>
-              <span class="caption">{d.dur}</span>
+              <span class="caption text-accent">{d.n} · DOMINIO</span>
+              <span class="caption text-muted">{d.dur}</span>
             </div>
             <h3 class="display-md mt-2">{d.name}</h3>
-            <div class="laser-line max-w-[60px] opacity-40" />
+            <div class="laser-line max-w-[60px]" />
             <p class="body-lg">{d.desc}</p>
             <ul class="flex flex-col gap-3 mt-2">
               {d.bullets.map((b) => (
@@ -79,8 +79,8 @@ const dominios = [
       }
     </div>
 
-    <p class="caption mt-16 md:mt-20 text-center anim-in">
-      21 de mayo · Hotel Hilton Tucumán
+    <p class="caption mt-16 md:mt-20 text-center text-muted anim-in">
+      17 de Junio · Hotel Hilton Tucumán
     </p>
   </div>
 </section>

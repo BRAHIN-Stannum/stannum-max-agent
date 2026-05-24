@@ -23,14 +23,14 @@ const items = [
 ];
 ---
 
-<section class="section relative overflow-hidden border-t border-default" data-reveal>
-  <div class="grain"></div>
-  <div class="container-stannum relative">
+<section class="section relative" data-reveal>
+  <div class="container-stannum">
     <div class="max-w-3xl">
       <p class="eyebrow anim-in">INCLUIDO</p>
       <h2 class="display-xl mt-6 anim-in">
-        Te vas con herramientas<br />
-        <span class="text-body font-normal">listas para usar.</span>
+        <span class="text-primary">Te vas con herramientas</span>
+        <br />
+        <span class="display-xl-cyan">listas para usar.</span>
       </h2>
       <p class="body-lg mt-8 md:mt-10 text-lg anim-in">
         Cada participante sale del evento con recursos concretos para implementar al día siguiente.
@@ -42,7 +42,7 @@ const items = [
         items.map((it) => (
           <article class="card anim-in flex flex-col gap-5">
             <span class="number-lg !text-[clamp(48px,6vw,80px)] !leading-none">{it.n}</span>
-            <div class="laser-line max-w-[60px] opacity-40" />
+            <div class="laser-line max-w-[60px]" />
             <h3 class="display-md">{it.head}</h3>
             <p class="body-lg">{it.body}</p>
           </article>
@@ -50,7 +50,7 @@ const items = [
       }
     </div>
 
-    <div class="mt-20 md:mt-24 anim-in border-t border-default pt-12 md:pt-16 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-end">
+    <div class="mt-20 md:mt-24 anim-in border-t pt-12 md:pt-16 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-end" style="border-color: rgba(0,229,212,0.25);">
       <p class="body-lg max-w-2xl">
         <span class="eyebrow block mb-4">¿IMPLEMENTACIÓN PERSONALIZADA?</span>
         Después del evento podés agendar una sesión 1:1 gratuita para ver cómo aplicar IA
