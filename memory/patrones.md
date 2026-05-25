@@ -59,6 +59,15 @@ Comportamientos recurrentes en la dirección estratégica de STANNUM. Lo que se 
 
 ---
 
+## Pedido de "ejecutá esta guía" con tools externas no conectadas
+**Observado:** 1 vez confirmada · primera vez: 2026-05-25 (THE LINE PROJECT — avatar IA)
+**Descripción:** Brahin pega un instructivo completo (3+ pasos con plataformas tipo Nanobanan, ElevenLabs, Creatify, etc.) y pide "ejecutá esto" esperando flujo end-to-end agéntico. Algunas plataformas no tienen MCP/API conectado, por lo que solo una fracción es ejecutable por MAX.
+**Señal:** Mensaje con bloque pegado tipo guía/tutorial + verbo "ejecutá / replicá / hacé este flujo" + nombres de SaaS con UI propia (Nanobanan, ElevenLabs, Creatify, HeyGen, Synthesia, Sora, Suno, etc.).
+**Respuesta validada:** Antes de avanzar, devolver tabla "paso / herramienta / ¿ejecutable por MAX?" con ✅/❌ y razón. Ofrecer ejecutar los pasos ✅ ahora y dejar instrucciones claras de cómo Brahin ejecuta los ❌. No re-explicar lo mismo si Brahin insiste — pasar directo a la acción concreta (pedir input que falta, ej: foto, guión).
+**Skill relacionada:** `#govIA`, `#brief`
+
+---
+
 ## Campañas de prospección activas sin registro en pipeline
 **Observado:** 1 vez confirmada · 2026-05-21 (emails speakers Brahin)
 **Descripción:** Brahin ejecuta campañas de prospección (agencias speakers, leads B2B post-eventos) pero el trabajo no tiene tarea de tracking en ClickUp — trabajo invisible.

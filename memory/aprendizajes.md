@@ -51,6 +51,14 @@
 
 ---
 
+## 2026-05-25 — Capacidades MCP reales en flujos de generación de contenido IA externo
+**Contexto:** Brahin pidió ejecutar guía "THE LINE PROJECT" (3 pasos: ChatGPT → Nanobanan Pro → ElevenLabs + Creatify Aurora) para generar avatar IA.
+**Aprendizaje:** MAX solo tiene MCP conectado para el rol de ChatGPT (Paso 1 — análisis de foto + generación de prompt). Nanobanan Pro, ElevenLabs y Creatify Aurora son UIs externas sin MCP/API conectado. End-to-end agéntico no es posible en flujos de generación de avatar/voz/imagen con esas plataformas hoy.
+**Aplicación:** Frente a pedidos de "ejecutá esta guía/automatización" que involucren tools externas, hacer **auditoría de capacidades** explícita (tabla "puedo / no puedo" por paso) antes de prometer ejecución. Nunca avanzar sin clarificar qué paso es agéntico y cuál queda como acción manual del operador.
+**Skill afectada:** `#govIA`, todas las skills que orquestan flujos multi-tool
+
+---
+
 ## Histórico
 
 _(Aprendizajes de proyectos cerrados o superseded por decisiones posteriores)_
