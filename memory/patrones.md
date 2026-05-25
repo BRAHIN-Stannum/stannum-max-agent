@@ -1,5 +1,5 @@
 # MAX — Patrones
-**Actualizado:** 2026-05-23
+**Actualizado:** 2026-05-25
 
 Comportamientos recurrentes en la dirección estratégica de STANNUM. Lo que se repite en sprints, diagnósticos y revisiones.
 
@@ -33,11 +33,29 @@ Comportamientos recurrentes en la dirección estratégica de STANNUM. Lo que se 
 ---
 
 ## Token/credencial expuesto sin rotación inmediata
-**Observado:** 1 vez · 2026-05-21 (ALERTA-001 en CRONOS)
-**Descripción:** Token de API (ClickUp) quedó expuesto en repositorio y la tarea de rotación no tiene fecha asignada ni urgencia activa.
-**Señal:** Tarea tipo ALERTA- en lista CRONOS sin fecha límite.
-**Respuesta validada:** Escalar a Brahin como primer ítem de sesión. Token expuesto invalida la seguridad de todo el ecosistema agéntico.
-**Skill relacionada:** `#govIA`
+**Observado:** 3 veces confirmadas · primera vez: 2026-05-21 (ALERTA-001 ClickUp) · última: 2026-05-25 (2 tokens Vercel `vcp_2obDpy...` y `vcp_7Guiz6...` pegados en chat por Brahin para deploy fallido)
+**Descripción:** Tokens de API quedan expuestos en repositorios, chats o logs. La rotación se posterga o no se hace. El patrón se extiende más allá de ClickUp — aparece en cualquier integración nueva donde Brahin necesita autorizar rápido (Vercel, GitHub, AI tools).
+**Señal:** (a) Tarea ALERTA- en CRONOS sin fecha. (b) Token pegado en chat de Claude para que MAX ejecute un comando. (c) Múltiples tokens del mismo servicio generados en rápida sucesión durante debug.
+**Respuesta validada:** (1) Advertir explícitamente antes de ejecutar que el token quedó en logs y debe rotarse al terminar. (2) Al cerrar sesión, listar tokens expuestos en el resumen y confirmar revocación. (3) Para integraciones nuevas, sugerir flujos sin token (UI manual, login interactivo local) como default y solo escalar a token si Brahin pide explícitamente.
+**Skill relacionada:** `#govIA`, `#cierre`
+
+---
+
+## Brahin manda comandos cortados por formato markdown
+**Observado:** 4+ veces confirmadas · primera vez: 2026-05-25 (sesión deploy Vercel)
+**Descripción:** Brahin pega instrucciones tipo "Ejecutá este bash exacto:" seguidas de un bloque que llega vacío o cortado por el cliente de chat. El backtick triple, los caracteres especiales o el copy/paste desde otro chat (v0, Claude web) rompen el formato y MAX recibe el texto sin el comando real.
+**Señal:** Mensaje termina abrupto con ":" o "Ejecut" sin contenido posterior, o aparece un fragmento de código suelto sin contexto (`home/user/...`, `bash`, etc.) en medio del texto.
+**Respuesta validada:** No intentar reconstruir el comando ni adivinar. Pedir reenvío en texto plano sin markdown o como bloque triple-backtick explícito. Confirmar antes de ejecutar.
+**Skill relacionada:** Operativa general
+
+---
+
+## Sandbox cloud + auth IP-bound = falla recurrente y diagnóstico engañoso
+**Observado:** 1 vez confirmada · primera vez: 2026-05-25 (Vercel allowlist)
+**Descripción:** Servicios externos con restricción de IP (allowlist, OIDC bound to host, AWS SCP por IP) rechazan TODAS las requests desde el sandbox de Claude Code en la nube. Los errores que devuelven son engañosos — "token not valid", "scope not accessible", "unauthorized" — porque traducen el 403 según el endpoint en lugar de decir "tu IP no está autorizada". Esto lleva a debugging circular: probar tokens nuevos, variar flags, regenerar credenciales — todo inútil hasta diagnosticar la causa real.
+**Señal:** (a) Mismo comando, múltiples tokens, mismos errores inconsistentes. (b) CLI funciona local pero falla en sandbox. (c) Curl directo a la API revela el mensaje real (`Host not in allowlist`, `IP not authorized`, etc.).
+**Respuesta validada:** Si el primer intento falla con un error de auth y el segundo intento (con token rotado o flag cambiado) falla con otro error de auth distinto pero relacionado, NO probar un tercero. Ir directo al endpoint REST con `curl` para ver el mensaje real. Si es IP-bound: redirigir a flujo local (`vercel login` interactivo en máquina de Brahin) o UI manual. Documentar que el sandbox es cloud-only.
+**Skill relacionada:** `#govIA`, Operativa de integraciones
 
 ---
 
