@@ -1,5 +1,5 @@
 # MAX — Patrones
-**Actualizado:** 2026-05-23
+**Actualizado:** 2026-05-24
 
 Comportamientos recurrentes en la dirección estratégica de STANNUM. Lo que se repite en sprints, diagnósticos y revisiones.
 
@@ -65,3 +65,30 @@ Comportamientos recurrentes en la dirección estratégica de STANNUM. Lo que se 
 **Señal:** Múltiples emails salientes del mismo tipo en Gmail sin tarea correspondiente en PIPELINE o TORO.
 **Respuesta validada:** Proponer a Brahin crear tarea "Tracking [campaña]" en pipeline con fecha de revisión.
 **Skill relacionada:** `#pipeline`, TORO
+
+---
+
+## Brief largo fragmentado por saltos de línea
+**Observado:** 3+ veces · primera vez: 2026-05-24 (refactor Summit IA Tucumán — brief estético en 5 fragments, después brief de cambios críticos en 3 fragments, después brief de alto impacto fragmentado)
+**Descripción:** Brahin paste briefs estructurados directamente del Drive/Notes y los saltos de línea cortan el mensaje en 5-8 envíos consecutivos. Si se ejecuta después del primer fragment, se hace doble trabajo. Si se espera sin acuse, Brahin queda inseguro.
+**Señal:** Mensaje que empieza con header tipo "BRIEF" / "ERROR 1" / "CAMBIO 1" + termina sin frase ejecutiva clara, o el contenido se corta a media oración.
+**Respuesta validada:** Después de cada fragment: acuse breve con resumen capturado entre code-fence + "esperando ERROR/CAMBIO N+1". NO tocar código hasta el último fragment (terminado en bloque "EJECUCIÓN" / "ACCIONES" / "FLUJO").
+**Skill relacionada:** Todas las que reciben briefs largos (`#brief`, sesiones técnicas)
+
+---
+
+## Pivots estéticos mid-flow con auto-corrección
+**Observado:** 1 vez confirmada · 2026-05-24 (sitio Summit: 4 pivots — High Ticket → cyberpunk cyan → High Ticket restored → Manual de Marca oficial)
+**Descripción:** Brahin pide cambios estéticos, ve el resultado y detecta él mismo que se desvió del deck oficial / Manual de Marca. Pide vuelta atrás. El ciclo se repite hasta anclar contra material de referencia oficial.
+**Señal:** Una instrucción contradice una regla establecida en deck/Manual citado en sesión anterior. O Brahin escribe "el sitio actual tiene errores críticos" / "lo que hicimos está mal".
+**Respuesta validada:** Cuando un nuevo brief invierte una regla estética/comercial documentada, FLAGGEAR la contradicción **antes** de ejecutar — no después. Pedir "¿confirmás que querés desviar contra X regla del deck Y?" antes de tocar código. Mantener feature branch + deploy branch separadas para que el rollback sea barato.
+**Skill relacionada:** Skills de diseño/branding, sesiones de producto
+
+---
+
+## Validación visual por screenshot después de cada milestone
+**Observado:** Patrón base en sesiones técnicas · 2026-05-24
+**Descripción:** Brahin pide screenshots (desktop + mobile + fullpage + secciones específicas) después de cada cambio mayor para validar antes de continuar. No confía en "build pass" como signal de éxito — quiere ver el resultado renderizado.
+**Señal:** Tarea de coding con output visual (UI, sites, dashboards, decks).
+**Respuesta validada:** Después de build/cambio mayor, generar screenshots con puppeteer (emulating reduced-motion para capturar elementos con scroll-reveal), enviarlos con SendUserFile, y resumir lo aplicado/pendiente. No deployar hasta que Brahin valide visualmente.
+**Skill relacionada:** Cualquier skill con output visual, QA

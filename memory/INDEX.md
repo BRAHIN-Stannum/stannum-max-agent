@@ -1,5 +1,5 @@
 # MAX — Memory INDEX
-**Actualizado:** 2026-05-23 · Migrado desde Obsidian MEMORIA/
+**Actualizado:** 2026-05-24 · Cierre sesión refactor Summit IA Tucumán
 
 ---
 
